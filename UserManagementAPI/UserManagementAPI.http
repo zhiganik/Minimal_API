@@ -1,6 +1,62 @@
 @UserManagementAPI_HostAddress = http://localhost:5258
 
-GET {{UserManagementAPI_HostAddress}}/weatherforecast/
+### Get all users
+GET {{UserManagementAPI_HostAddress}}/api/users
 Accept: application/json
+Authorization: Bearer your-token-here
+
+###
+
+### Get user by ID
+GET {{UserManagementAPI_HostAddress}}/api/users/1
+Accept: application/json
+Authorization: Bearer your-token-here
+
+###
+
+### Create a new user
+POST {{UserManagementAPI_HostAddress}}/api/users
+Content-Type: application/json
+Authorization: Bearer your-token-here
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "age": 30
+}
+
+###
+
+### Create another user
+POST {{UserManagementAPI_HostAddress}}/api/users
+Content-Type: application/json
+Authorization: Bearer your-token-here
+
+{
+  "name": "Jane Smith",
+  "email": "jane.smith@example.com",
+  "age": 25
+}
+
+###
+
+### Update user
+PUT {{UserManagementAPI_HostAddress}}/api/users/1
+Content-Type: application/json
+Authorization: Bearer your-token-here
+
+{
+  "id": 1,
+  "name": "John Updated",
+  "email": "john.updated@example.com",
+  "age": 31
+}
+
+###
+
+### Delete user
+DELETE {{UserManagementAPI_HostAddress}}/api/users/1
+Accept: application/json
+Authorization: Bearer your-token-here
 
 ###
